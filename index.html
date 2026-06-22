@@ -34,10 +34,10 @@
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
-    padding: env(safe-area-inset-top) 0 calc(40px + env(safe-area-inset-bottom)) 0;
+    padding: 0 0 calc(40px + env(safe-area-inset-bottom)) 0;
   }
   .header {
-    padding: 20px 18px 14px;
+    padding: calc(env(safe-area-inset-top, 0px) + 44px) 18px 14px;
     border-bottom: 1px solid var(--card-border);
   }
   .header h1 {
