@@ -37,32 +37,42 @@
     padding: 0 0 calc(40px + env(safe-area-inset-bottom)) 0;
   }
   .header {
-    padding: calc(env(safe-area-inset-top, 0px) + 44px) 18px 14px;
-    border-bottom: 1px solid var(--card-border);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    padding: calc(env(safe-area-inset-top, 0px) + 50px) 18px 20px;
+    background: linear-gradient(120deg, #2DD4BF 0%, #20B8A8 60%, #1A9E92 100%);
   }
   .header h1 {
-    font-size: 19px;
-    font-weight: 700;
+    font-size: 21px;
+    font-weight: 800;
     margin: 0 0 2px;
     letter-spacing: -0.01em;
+    color: #0B3733;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
+  .header h1 .h-icon { font-size: 20px; }
   .header p {
     font-size: 13px;
-    color: var(--text-dim);
+    color: #0B3733;
+    opacity: 0.75;
     margin: 0;
+    font-weight: 600;
   }
   .streak-row {
     display: flex;
-    gap: 6px;
-    margin-top: 14px;
+    gap: 7px;
+    margin-top: 16px;
   }
   .streak-dot {
     flex: 1;
-    height: 5px;
-    border-radius: 3px;
-    background: var(--card-border);
+    height: 10px;
+    border-radius: 5px;
+    background: rgba(11,55,51,0.22);
   }
-  .streak-dot.done { background: var(--teal); }
+  .streak-dot.done { background: #0B3733; }
   .view-toggle {
     display: flex;
     gap: 6px;
@@ -1595,7 +1605,7 @@ function App() {
   return (
     <div>
       <div className="header">
-        <h1>Your Training Plan</h1>
+        <h1><span className="h-icon">🏋️</span>Your Training Plan</h1>
         <p>Fat loss · Beginner · Full gym + pool</p>
         <div className="streak-row">
           {streak.map((d, i) => (
